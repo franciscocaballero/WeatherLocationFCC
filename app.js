@@ -19,20 +19,22 @@ $.getJSON(api, function(data){
   var windSpeed = data.wind.speed;
   var city = data.name;
 
-  fTemp = (kelvin)*(9/5)-459.67;
-  cTemp = kelvin-273;
+  fTemp = (kelvin*(9/5)-459.67).toFixed(2);
+  cTemp = (kelvin-273).toFixed(2);
   var tempSwap = true;
 
   $('#city').html(city);
   $('#weatherType').html(weatherType);
-  $('#fTemp').html(fTemp);
+  $('#fTemp').html(fTemp + " &#8457;");
   $('#fTemp').click(function(){
 
     if(tempSwap === false){
-      $('#fTemp').html(cTemp);
+      $('#fTemp').html(fTemp + " &#8457;");
+
+      $('#fTemp').html(cTemp + " &#8451;");
       tempSwap = true;
     }else{
-      $('#fTemp').html(fTemp);
+      $('#fTemp').html(cTemp + " &#8451;");
       tempSwap = false;
     }
   })
