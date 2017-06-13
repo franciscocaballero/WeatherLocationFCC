@@ -19,8 +19,8 @@ $.getJSON(api, function(data){
   var windSpeed = data.wind.speed;
   var city = data.name;
 
-  fTemp = (kelvin*(9/5)-459.67).toFixed(2);
-  cTemp = (kelvin-273).toFixed(2);
+  fTemp = (kelvin*(9/5)-459.67).toFixed(1);
+  cTemp = (kelvin-273).toFixed(1);
   var tempSwap = true;
 
   $('#city').html(city);
@@ -30,47 +30,37 @@ $.getJSON(api, function(data){
 
     if(tempSwap === false){
       $('#fTemp').html(fTemp + " &#8457;");
-
-      $('#fTemp').html(cTemp + " &#8451;");
       tempSwap = true;
     }else{
       $('#fTemp').html(cTemp + " &#8451;");
       tempSwap = false;
     }
-  })
+  });
 
 
+windSpeed = (2.237*(windSpeed)).toFixed(1);
+  $('#windSpeed').html(windSpeed + " MPH");
 
-  $('#windSpeed').html(windSpeed);
-})
+  if(fTemp > 80){
+    $('body').css('background-color','#F3E40E');
+    $('#sun').html('<i class="fa fa-sun-o fa-spin" aria-hidden="true></i>');
+  } else if(fTemp > 60){
+    $('body').css('background-color','#0EF397');
+    $('#sun').html('<i class="fa fa-cloud fa-spin"></i>');
+  }else if (fTemp > 40){
+$('body').css('background-color','#0FFFFF');
+$('#sun').html('<i class="fa fa-snowflake-o fa-spin" aria-hidden="true"></i>');
+
+  }
+
 
 });
-// function getWeather() {
-// $.ajax({
-//   url: 'http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=5d291dcae7f9d1a344a6ea02391feef7',
-//   jsonp: 'jsonp',
-//   dataType: 'jsonp'
-//
-// success: function(response) {
-//   console.log(data.coord);
-// }
-//
-//
-//
-// });
-//
-//
-// }
 
 
 
+});
 
-
-
-
-
-
-
+document.getElementById("demo").innerHTML = Date();
 
 
 

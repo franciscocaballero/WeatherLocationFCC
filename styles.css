@@ -1,3 +1,24 @@
-body {
-background-image: url('');
+#header{
+font-family: 'Contrail One', cursive;
+  color: white;
+}
+#header-2{
+  font-family: 'Contrail One', cursive;
+    color: white;
+}
+#demo{
+  font-family: 'Contrail One', cursive;
+    color: white;
+    font-size: 30px;
+}
+#sun{
+  font-size: 200px;
+  color: white;
+}
+.list-unstyled{
+  margin-top: 25px;
+  background-color: transparent;
+  font-family: 'Contrail One', cursive;
+    color: white;
+    font-size: 30px;
 }
