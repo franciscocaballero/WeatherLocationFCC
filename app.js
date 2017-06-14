@@ -43,13 +43,13 @@ windSpeed = (2.237*(windSpeed)).toFixed(1);
 
   if(fTemp > 80){
     $('body').css('background-color','#F3E40E');
-    $('#sun').html('<i class="fa fa-sun-o fa-spin" aria-hidden="true></i>');
+    $('#sun').html('<i class="fa fa-sun-o fa-spin" ></i>');
   } else if(fTemp > 60){
     $('body').css('background-color','#0EF397');
-    $('#sun').html('<i class="fa fa-cloud fa-spin" aria-hidden="true></i>');
+    $('#sun').html('<i class="fa fa-cloud fa-spin"></i>');
   }else if (fTemp > 40){
 $('body').css('background-color','#0FFFFF');
-$('#sun').html('<i class="fa fa-snowflake-o fa-spin" aria-hidden="true"></i>');
+$('#sun').html('<i class="fa fa-snowflake-o fa-spin"></i>');
   }
 
 });
